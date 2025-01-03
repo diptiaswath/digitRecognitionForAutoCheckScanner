@@ -1,4 +1,4 @@
-# Digit Recognizer for Automated Check Scans - Executive Summary
+# Digit Recognizer for Automated Check Scans
 
 ## Introduction
 
