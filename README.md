@@ -1,4 +1,4 @@
-# Executive Summary: Digit Recognizer Deployment for Automated Check Scanning
+# Executive Summary: Digit Recognizer for Automated Check Scanning
 
 ## Introduction
 
