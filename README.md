@@ -52,7 +52,34 @@ Metropolitan Bank processes over 100,000 paper checks daily. The current manual 
 
 ![Neural Networks Basics](https://github.com/user-attachments/assets/b49dae22-a9cb-43f5-8444-5c897db818c7)
 
-## Technical Implementation
+## Model Performance Summary
+
+### 1. Training Results
+* Model reached >99% accuracy
+* Loss curve showed rapid initial improvement, then stabilized
+* Trend indicates good convergence and learning
+
+### 2. Validation Results
+* Final Validation Accuracy: 98.02%
+* Validation Loss: 0.1570
+* Strong performance indicated by high diagonal density in confusion matrix
+
+### 3. Prediction Analysis
+* Total Correct Predictions: 8,334
+* Total Misclassifications: 171
+* Per-digit accuracy:
+   * Best performing: Digit 1 (967 correct, 12 errors)
+   * Most challenging: Digit 7 (834 correct, 23 errors)
+
+### 4. Overall Performance
+* Model exceeds 98% accuracy threshold
+* Even distribution of errors across digits
+* Average error rate of around 2% per digit class
+* Shows robust performance across all digit classes
+
+**Note:** Current performance (98.02%) still needs improvement to meet business requirement of 99.9% accuracy.
+
+## Deep Dives: Technical Implementation 
 
 ### Training Data
 The dataset comprises 28x28 grayscale images of handwritten digits. The training data has 785 columns, with pixel values ranging from 0 to 255.
