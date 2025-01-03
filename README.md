@@ -73,26 +73,30 @@ The dataset comprises 28x28 grayscale images of handwritten digits. The training
 | 9 | 845 | 21 |
 | **Total** | **8334** | **171** |
 
-## Proposed High Level Design: Auto Check Scanner
+### Conclusion
 
-The proposed end-to-end auto check scanner workflow will include the following components
+The digit recognizer achieves the desired accuracy and efficiency, significantly improving operational workflows while saving costs.
 
-## 1. Check Capture Stage
+## Proposed High Level Design: Auto Check Scanner 
+
+The proposed end-to-end auto check scanner workflow will include the following components with Digit Recognizer as its core component:
+
+## 1. Check Capture 
 * Physical checks are scanned at branch locations or ATMs
 * Initial quality control ensures image clarity
 * Multiple checks can be batch processed
 
-## 2. Image Preprocessing
+## 2. Image Preprocessor
 * Enhances image quality (contrast, alignment)
 * Detects relevant fields (amount, account number)
 * Removes background noise and artifacts
 
-## 3. Digit Recognition
+## 3. Digit Recognizer
 * Neural network processes isolated digits
 * Recognizes handwritten and printed numbers
 * Provides confidence scores for each prediction
 
-## 4. Banking System Integration
+## 4. Banking System Integrator
 * Validates recognized amounts
 * Creates transaction records
 * Updates account balances
@@ -100,7 +104,7 @@ The proposed end-to-end auto check scanner workflow will include the following c
   
 ![Neural Networks Basics](https://github.com/user-attachments/assets/b49dae22-a9cb-43f5-8444-5c897db818c7)
 
-## Digit Recognition: Component Deployment Guidelines
+## Digit Recognizer: Component Deployment Guidelines
 
 1. **Model Packaging:** Save the trained model as a serialized object
 2. **Integration:** Incorporate the model into the bank's Auto Check Scanner application
@@ -108,8 +112,7 @@ The proposed end-to-end auto check scanner workflow will include the following c
 4. **Infrastructure Setup:** Use cloud deployment based on the bank's requirements
 5. **Monitoring:** Implement logging and alerting for model drift, performance, and prediction errors
 
-
-## Release and Launch Metrics
+## Auto Check Scanner: Release Guidelines and Launch Metrics
 
 ### Key Performance Indicators (KPIs):
 * Processing Time: <5 seconds per check
@@ -127,5 +130,4 @@ The proposed end-to-end auto check scanner workflow will include the following c
 * **Full Launch:** Deploy across all branches
 
 ## Conclusion
-
-The digit recognizer achieves the desired accuracy and efficiency, significantly improving operational workflows while saving costs. With proper deployment and monitoring, it will transform check processing at Metropolitan Bank, enhancing customer satisfaction and operational efficiency.
+With proper deployment and monitoring, the Auto Check Scanner with the Digit Recognizer is expected to transform check processing at Metropolitan Bank, enhancing customer satisfaction and operational efficiency.
