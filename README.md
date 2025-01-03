@@ -27,35 +27,53 @@ Metropolitan Bank processes over 100,000 paper checks daily. The current manual 
 * Reduced error correction costs
 * Reallocation of clerical staff to strategic tasks
 
-## Model Development
+## System Architecture: Auto Check Scanner
+
+### 1. Check Capture 
+* Physical checks are scanned at branch locations or ATMs
+* Initial quality control ensures image clarity
+* Multiple checks can be batch processed
+
+### 2. Image Preprocessor
+* Enhances image quality (contrast, alignment)
+* Detects relevant fields (amount, account number)
+* Removes background noise and artifacts
+
+### 3. Digit Recognizer
+* Neural network processes isolated digits
+* Recognizes handwritten and printed numbers
+* Provides confidence scores for each prediction
+
+### 4. Banking System Integrator
+* Validates recognized amounts
+* Creates transaction records
+* Updates account balances
+* Archives check images for compliance
+
+![Neural Networks Basics](https://github.com/user-attachments/assets/b49dae22-a9cb-43f5-8444-5c897db818c7)
+
+## Technical Implementation
 
 ### Training Data
-
 The dataset comprises 28x28 grayscale images of handwritten digits. The training data has 785 columns, with pixel values ranging from 0 to 255.
 
 ### Model Pipeline
-
 1. **Data Preprocessing:** Conversion of images to tensors
 2. **Model Architecture:** Feedforward Neural Network (FNN)
 3. **Training and Validation Split:** 80-20 stratified division
 4. **Evaluation Metrics:** Accuracy and loss curves
 
-## Results
+## Model Performance
 
-### Training Performance
-
+### Training Results
 * **Loss Curve:** Rapid initial decrease, stabilizing with minor fluctuations
 * **Accuracy Curve:** Early improvement, reaching over 98% by epoch 5, gradually approaching 100%
 
-### Validation Performance
-
-#### Confusion Matrix Analysis:
-* High diagonal density indicates strong performance
-* Few misclassifications scattered off-diagonal
-
-#### Metrics:
+### Validation Results
 * Validation Loss: 0.1570
 * Validation Accuracy: 98.02%
+* High diagonal density in confusion matrix
+* Minimal off-diagonal misclassifications
 
 ### Prediction Summary
 
@@ -73,46 +91,39 @@ The dataset comprises 28x28 grayscale images of handwritten digits. The training
 | 9 | 845 | 21 |
 | **Total** | **8334** | **171** |
 
-### Conclusion
+## Deployment Strategy
 
-The digit recognizer achieves the desired accuracy and efficiency, significantly improving operational workflows while saving costs.
+### Technical Requirements
+* Cloud infrastructure for model hosting
+* FAST API development environment
+* Banking system integration APIs
+* Monitoring and logging infrastructure
+* Secure data storage for compliance
 
-## Proposed High Level Design: Auto Check Scanner 
-
-The proposed end-to-end auto check scanner workflow will include the following components with Digit Recognizer as its core component:
-
-## 1. Check Capture 
-* Physical checks are scanned at branch locations or ATMs
-* Initial quality control ensures image clarity
-* Multiple checks can be batch processed
-
-## 2. Image Preprocessor
-* Enhances image quality (contrast, alignment)
-* Detects relevant fields (amount, account number)
-* Removes background noise and artifacts
-
-## 3. Digit Recognizer
-* Neural network processes isolated digits
-* Recognizes handwritten and printed numbers
-* Provides confidence scores for each prediction
-
-## 4. Banking System Integrator
-* Validates recognized amounts
-* Creates transaction records
-* Updates account balances
-* Archives check images for compliance
-  
-![Neural Networks Basics](https://github.com/user-attachments/assets/b49dae22-a9cb-43f5-8444-5c897db818c7)
-
-## Digit Recognizer: Component Deployment Guidelines
-
+### Implementation Steps
 1. **Model Packaging:** Save the trained model as a serialized object
-2. **Integration:** Incorporate the model into the bank's Auto Check Scanner application
-3. **API Development:** Build FAST APIs to connect with existing systems
-4. **Infrastructure Setup:** Use cloud deployment based on the bank's requirements
-5. **Monitoring:** Implement logging and alerting for model drift, performance, and prediction errors
+2. **System Integration:** Incorporate into bank's existing infrastructure
+3. **API Development:** Build FAST APIs for system communication
+4. **Monitoring Setup:** Implement comprehensive logging and alerting
+5. **Security Implementation:** Ensure compliance with banking regulations
 
-## Auto Check Scanner: Release Guidelines and Launch Metrics
+### Release Plan
+1. **Pilot Phase:**
+   * Deploy to select branches
+   * Gather initial feedback
+   * Monitor system performance
+
+2. **Refinement Phase:**
+   * Address pilot feedback
+   * Optimize system performance
+   * Enhance monitoring metrics
+
+3. **Full Launch:**
+   * Roll out to all branches
+   * Implement comprehensive monitoring
+   * Provide support infrastructure
+
+## Performance Monitoring
 
 ### Key Performance Indicators (KPIs):
 * Processing Time: <5 seconds per check
@@ -122,12 +133,9 @@ The proposed end-to-end auto check scanner workflow will include the following c
 ### Monitoring Metrics:
 * Real-time latency
 * Error rate trends
-* Customer satisfaction scores post-launch
-
-### Release Phases:
-* **Pilot:** Roll out to select branches for testing
-* **Feedback Loop:** Address issues and refine the system
-* **Full Launch:** Deploy across all branches
+* Customer satisfaction scores
+* System uptime and reliability
+* Processing volume metrics
 
 ## Conclusion
-With proper deployment and monitoring, the Auto Check Scanner with the Digit Recognizer is expected to transform check processing at Metropolitan Bank, enhancing customer satisfaction and operational efficiency.
+The Auto Check Scanner with integrated Digit Recognizer achieves the desired accuracy and efficiency metrics, promising significant improvements in operational workflows and cost savings. With the proposed deployment strategy and monitoring framework, the system is well-positioned to transform check processing at Metropolitan Bank, enhancing both customer satisfaction and operational efficiency.
