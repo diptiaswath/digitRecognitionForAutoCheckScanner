@@ -92,19 +92,19 @@ The dataset comprises 28x28 grayscale images of handwritten digits. The training
 3. **Training and Validation Split:** 80-20 stratified division
 4. **Evaluation Metrics:** Accuracy and loss curves
 
-## Model Performance
+### Model Evaluation
 
-### Training Results
+#### Training Results
 * **Loss Curve:** Rapid initial decrease, stabilizing with minor fluctuations
 * **Accuracy Curve:** Early improvement, reaching over 98% by epoch 5, gradually approaching 100%
 
-### Validation Results
+#### Validation Results
 * Validation Loss: 0.1570
 * Validation Accuracy: 98.02%
 * High diagonal density in confusion matrix
 * Minimal off-diagonal misclassifications
 
-### Prediction Summary
+#### Prediction Summary
 
 | Class | True Predictions | Misclassifications |
 |-------|-----------------|-------------------|
@@ -120,16 +120,16 @@ The dataset comprises 28x28 grayscale images of handwritten digits. The training
 | 9 | 845 | 21 |
 | **Total** | **8334** | **171** |
 
-## Deployment Strategy
+### Model Deployment Strategy
 
-### Technical Requirements
+#### Technical Requirements
 * Cloud infrastructure for model hosting
 * FAST API development environment
 * Banking system integration APIs
 * Monitoring and logging infrastructure
 * Secure data storage for compliance
 
-### Implementation Steps
+#### Implementation Steps
 1. **Model Packaging:** Save the trained model as a serialized object
 2. **System Integration:** Incorporate into bank's existing infrastructure
 3. **API Development:** Build FAST APIs for system communication
@@ -152,14 +152,14 @@ The dataset comprises 28x28 grayscale images of handwritten digits. The training
    * Implement comprehensive monitoring
    * Provide support infrastructure
 
-## Performance Monitoring
+### Performance Monitoring
 
-### Key Performance Indicators (KPIs):
+#### Key Performance Indicators (KPIs):
 * Processing Time: <5 seconds per check
 * Accuracy: 99.9%
 * Confidence Flagging Rate: <5%
 
-### Monitoring Metrics:
+#### Monitoring Metrics:
 * Real-time latency
 * Error rate trends
 * Customer satisfaction scores
