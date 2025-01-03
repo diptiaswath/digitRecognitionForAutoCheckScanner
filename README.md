@@ -1,6 +1,6 @@
-# Digit Recognizer for Automated Check Scanning
+# Digit Recognizer for Automated Check Scanning: Executive Summary
 
-## Executive Summary
+## Introduction
 
 Metropolitan Bank processes over 100,000 paper checks daily. The current manual system for entering check amounts is time-consuming, error-prone, and costly. To address these challenges, a machine learning-based digit recognizer has been developed and integrated into an automated check scanner system.
 
