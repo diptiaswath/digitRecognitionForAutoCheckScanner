@@ -1,25 +1,27 @@
 # Digit Recognizer for Automated Check Scans
 
-## Introduction
+## Executive Summary 
+
+### Introduction
 
 Metropolitan Bank processes over 100,000 paper checks daily. The current manual system for entering check amounts is time-consuming, error-prone, and costly. To address these challenges, a machine learning-based digit recognizer has been developed and integrated into an automated check scanner system.
 
-## Business Problem
+### Business Problem
 
-### Manual System Drawbacks:
+#### Manual System Drawbacks:
 * 2-3 minutes per check processing time
 * 2% error rate
 * $2M annual labor cost
 * Significant delays for customers
 
-### Solution Requirements:
+#### Solution Requirements:
 * Automated handwriting recognition
 * Processing checks within 5 seconds
 * 99.9% accuracy
 * Low-confidence prediction flagging
 * Robustness to diverse handwriting styles
 
-## Expected Business Impact
+### Expected Business Impact
 
 * 90% reduction in processing time
 * $1.8M annual savings
@@ -27,24 +29,24 @@ Metropolitan Bank processes over 100,000 paper checks daily. The current manual 
 * Reduced error correction costs
 * Reallocation of clerical staff to strategic tasks
 
-## System Architecture: Auto Check Scanner
+### System Architecture: Auto Check Scanner
 
-### 1. Check Capture 
+#### 1. Check Capture 
 * Physical checks are scanned at branch locations or ATMs
 * Initial quality control ensures image clarity
 * Multiple checks can be batch processed
 
-### 2. Image Preprocessor
+#### 2. Image Preprocessor
 * Enhances image quality (contrast, alignment)
 * Detects relevant fields (amount, account number)
 * Removes background noise and artifacts
 
-### 3. Digit Recognizer
+#### 3. Digit Recognizer
 * Neural network processes isolated digits
 * Recognizes handwritten and printed numbers
 * Provides confidence scores for each prediction
 
-### 4. Banking System Integrator
+#### 4. Banking System Integrator
 * Validates recognized amounts
 * Creates transaction records
 * Updates account balances
@@ -52,26 +54,26 @@ Metropolitan Bank processes over 100,000 paper checks daily. The current manual 
 
 ![Neural Networks Basics](https://github.com/user-attachments/assets/b49dae22-a9cb-43f5-8444-5c897db818c7)
 
-## Model Performance Summary
+### Model Performance Summary
 
-### 1. Training Results
+#### 1. Training Results
 * Model reached >99% accuracy
 * Loss curve showed rapid initial improvement, then stabilized
 * Trend indicates good convergence and learning
 
-### 2. Validation Results
+#### 2. Validation Results
 * Final Validation Accuracy: 98.02%
 * Validation Loss: 0.1570
 * Strong performance indicated by high diagonal density in confusion matrix
 
-### 3. Prediction Analysis
+#### 3. Prediction Analysis
 * Total Correct Predictions: 8,334
 * Total Misclassifications: 171
 * Per-digit accuracy:
    * Best performing: Digit 1 (967 correct, 12 errors)
    * Most challenging: Digit 7 (834 correct, 23 errors)
 
-### 4. Overall Performance
+#### 4. Overall Performance
 * Model exceeds 98% accuracy threshold
 * Even distribution of errors across digits
 * Average error rate of around 2% per digit class
