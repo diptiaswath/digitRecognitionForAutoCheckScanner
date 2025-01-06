@@ -29,7 +29,7 @@ Metropolitan Bank processes over 100,000 paper checks daily. The current manual 
 * Reduced error correction costs
 * Reallocation of clerical staff to strategic tasks
 
-### System Architecture: Auto Check Scanner
+### Proposed System Architecture: Auto Check Scanner with Digit Recognizer 
 
 #### 1. Check Capture 
 * Physical checks are scanned at branch locations or ATMs
@@ -54,7 +54,7 @@ Metropolitan Bank processes over 100,000 paper checks daily. The current manual 
 
 ![Neural Networks Basics](https://github.com/user-attachments/assets/b49dae22-a9cb-43f5-8444-5c897db818c7)
 
-### Model Performance Summary
+### Digit Recognizer: Model Performance Summary
 
 #### 1. Training Results
 * Model reached >99% accuracy
